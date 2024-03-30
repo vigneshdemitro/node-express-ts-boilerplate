@@ -4,7 +4,7 @@ import { hashPassword } from '../utils/utils';
 
 export class UserService {
 
-    constructor() {}
+    constructor() { }
 
     async createUser(userDetails: User): Promise<[null | any, User | null]> {
         try {
@@ -38,9 +38,14 @@ export class UserService {
         }
     }
 
-    async getUsers(): Promise<[null | any, Array<User> | null]> {
+    async getUsers(filter?: Object): Promise<[null | any, Array<User> | null]> {
         try {
-            const users = await UserModel.find().maxTimeMS(5000);
+            let filters = {};
+            if (filter) {
+                console.log(filter);
+                filters = { ...filter };
+            }
+            const users = await UserModel.find(filters).maxTimeMS(5000);
             if (!users || users.length === 0) {
                 return [null, []];
             }

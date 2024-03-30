@@ -1,7 +1,6 @@
 import { Request, Response, Router } from 'express';
 import userRouter from './user.routes';
 import AuthRouter from './auth.routes';
-import passport from 'passport';
 
 const router: Router = Router();
 

@@ -4,7 +4,6 @@ import { UserService } from "../services/users.service";
 import { User } from "../models/user.model";
 import { createResponse } from "../utils/utils";
 import { MongooseError } from "mongoose";
-import { ObjectId } from "mongodb";
 
 export class UserController {
     private userService: UserService;
