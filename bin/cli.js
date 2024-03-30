@@ -58,12 +58,12 @@ const cloneRepo = (projectPath) => {
 };
 
 const installDependencies = () => {
-    console.log('Installing Dependencies');
-    runCommand(`npm install`);
+    console.log('Installing Dependencies...');
+    runCommand('npm install');
 }
 
 const removeExtraFiles = async ({ projectName, projectPath }) => {
-    console.log('Tidying up the directory');
+    console.log('Tidying up the directory...');
     fs.rmSync(path.join(projectPath, '.git'), { recursive: true });
     fs.rmSync(path.join(projectPath, 'bin'), { recursive: true });
     let packageJSONData = await readFile(path.join(projectPath, 'package.json'));
@@ -88,8 +88,8 @@ async function main() {
         cloneRepo(projectPath);
         await removeExtraFiles({ projectName, projectPath });
         installDependencies()
-        console.log(`Congratulations, your app is ready to use`)
-        console.log(`Navigate:\n cd ${projectPath}`)
+        console.log('Congratulations, your app is ready to use.')
+        console.log(`Navigate:\n cd ${projectName}`)
         console.log(`Start app:\n npm run dev`)
     } catch (error) {
         console.error(`Unexpected error happened`, error);
