@@ -52,7 +52,7 @@ $ npm install
 
 # Setting up Environmental variables
 
-- Copy .env.example and create .env
+- copy .env.example and create .env
 - .env can be configured according to the usage
 
 ## Generating dataset
@@ -60,7 +60,7 @@ $ npm install
 ```bash
 $ npm run migrate
 
-This creates the organizations and users with dummy data with help of faker-js
+This creates the users with dummy data with help of faker-js
 ```
 
 ## Running the app
@@ -70,7 +70,7 @@ This creates the organizations and users with dummy data with help of faker-js
 $ npm run start
 
 Starts the server in the production mode.\
-[http://localhost:4001](http://localhost:4001) to do postman tests.
+[http://localhost:4001/api/v1](http://localhost:4001/api/v1) to do postman tests.
 ```
 
 ```bash
@@ -78,5 +78,5 @@ Starts the server in the production mode.\
 $ npm run dev
 
 Starts the server in the development mode.\
-[http://localhost:4001](http://localhost:4001) to do postman tests.
+[http://localhost:4001/api/v1](http://localhost:4001/api/v1) to do postman tests.
 ```
