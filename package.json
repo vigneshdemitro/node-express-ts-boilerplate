@@ -1,6 +1,6 @@
 {
   "name": "create-node-express-ts-boilerplate",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "node express boilerplate using ts",
   "main": "server.js",
   "scripts": {
