@@ -8,19 +8,19 @@ Migrate-mongo is used for migrations and faker is used for creating test db.
 
 # Project structure
 ```
--src
-    -server.ts                          #Express App
-    -controllers                        #Controllers for the routes
-    -middlewares                        #Authentication Middlewares
-    -models                             #Schema Models
-    -routes                             #App routes
-    -services                           #Services for the routes
-    -utils                              #Utils
-    -.env.example                       #Environmental variables
-    -migrate-mongo-config.js            #Config file of migrate mongo
-    -package.json]
-    -README.MD]
-    -tsconfig.json]
+- src
+    - server.ts                          #Express App
+    - controllers                        #Controllers for the routes
+    - middlewares                        #Authentication Middlewares
+    - models                             #Schema Models
+    - routes                             #App routes
+    - services                           #Services for the routes
+    - utils                              #Utils
+    - .env.example                       #Environmental variables
+    - migrate-mongo-config.js            #Config file of migrate mongo
+    - package.json
+    - README.MD
+    - tsconfig.json
 ```
 
 ## Quick Start
