@@ -74,7 +74,7 @@ Starts the server in the production mode.\
 ```
 
 ```bash
-# production
+# development
 $ npm run dev
 
 Starts the server in the development mode.\
