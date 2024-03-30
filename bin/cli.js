@@ -8,9 +8,6 @@ const { readFile, writeFile } = require('fs/promises');
 const packageName = 'node-express-ts-boilerplate';
 const gitRepo = `https://github.com/vigneshdemitro/${packageName}.git`;
 
-const gitCommand = `git clone --depth 1 ${gitRepo} ${repoName}`;
-const installDeps = `cd ${repoName} && npm install`;
-
 const checkInputs = () => {
     if (process.argv.length < 3) {
         console.log('Kindly provide app name');
@@ -55,6 +52,7 @@ const runCommand = (command) => {
 
 const cloneRepo = (projectPath) => {
     console.log('Downloading files...');
+    const gitCommand = `git clone --depth 1 ${gitRepo} ${projectPath}`;
     runCommand(gitCommand);
     process.chdir(projectPath);
 };
