@@ -89,7 +89,8 @@ async function main() {
         await removeExtraFiles({ projectName, projectPath });
         installDependencies()
         console.log(`Congratulations, your app is ready to use`)
-        console.log(`Start app: npm run dev`)
+        console.log(`Navigate:\n cd ${projectPath}`)
+        console.log(`Start app:\n npm run dev`)
     } catch (error) {
         console.error(`Unexpected error happened`, error);
     }
