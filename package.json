@@ -11,6 +11,7 @@
     "migrate": "npx migrate-mongo up",
     "migrate:down": "npx migrate-mongo down"
   },
+  "bin": "./bin/cli.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vigneshdemitro/node-express-ts-boilerplate.git"
