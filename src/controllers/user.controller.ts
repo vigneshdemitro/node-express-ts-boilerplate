@@ -47,7 +47,7 @@ export class UserController {
     }
 
     async getUsers(req: Request, res: Response) {
-        const [error, users] = await this.userService.getUsers();
+        const [error, users] = await this.userService.getUsers(req.query);
         if (error) {
             let errors = error;
             if (error instanceof MongooseError) errors = error.message;

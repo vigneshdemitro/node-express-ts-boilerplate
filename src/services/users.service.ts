@@ -1,3 +1,4 @@
+import { ObjectId } from 'mongodb';
 import { User, UserModel } from '../models/user.model';
 import logger from '../utils/logger';
 import { hashPassword } from '../utils/utils';
@@ -38,12 +39,26 @@ export class UserService {
         }
     }
 
-    async getUsers(filter?: Object): Promise<[null | any, Array<User> | null]> {
+    async getUsers(filter?: Partial<User>): Promise<[null | any, Array<User> | null]> {
         try {
-            let filters = {};
+            let filters: any = {};
             if (filter) {
-                console.log(filter);
-                filters = { ...filter };
+                const { _id, name, email, gender, role } = filter;
+                if (name) {
+                    filters.name = new RegExp(`[${name}]`, 'i');
+                }
+                if (email) {
+                    filters.email = new RegExp(`[${email}]`, 'i');
+                }
+                if (_id) {
+                    filters._id = new ObjectId(String(_id))
+                }
+                if (role) {
+                    filters.role = role;
+                }
+                if (gender) {
+                    filters.gender = gender;
+                }
             }
             const users = await UserModel.find(filters).maxTimeMS(5000);
             if (!users || users.length === 0) {

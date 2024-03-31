@@ -3,6 +3,7 @@ import { ExtractJwt, Strategy, StrategyOptionsWithoutRequest } from "passport-jw
 import { User, UserModel } from "../models/user.model";
 import { createResponse } from "../utils/utils";
 import { NextFunction, Request, Response } from "express";
+import passport from "passport";
 configDotenv();
 
 declare global {
@@ -42,5 +43,7 @@ export const isAuthorizedRole = (roles: Array<string>) => {
         next();
     }
 }
+
+export const authenticateToken = passport.authenticate('jwt', { session: false })
 
 export default passportConfig;
